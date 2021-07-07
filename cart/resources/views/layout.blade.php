@@ -7,13 +7,13 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-
+    <link rel="stylesheet" type="text/css" href="app.css">
     <title>Southern Cart</title>
 </head>
   
 <body>
 <!--Navigation bar-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <a class="navbar-brand" href="#">Southern</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -52,61 +52,60 @@
 
 <!--Footer-->
     <footer class="bg-dark text-center text-white">
+
       <!-- Grid container -->
       <div class="container p-4">
+
         <!-- Section: Form -->
         <section class="">
           <form action="">
+
             <!--Grid row-->
             <div class="row d-flex justify-content-center">
+
               <!--Grid column-->
               <div class="col-auto">
                 <p class="pt-2">
                   <strong>Sign up for our newsletter</strong>
                 </p>
               </div>
-              <!--Grid column-->
+              <!--/Grid column-->
 
               <!--Grid column-->
               <div class="col-md-5 col-12">
+
                 <!-- Email input -->
                 <div class="form-outline form-white mb-4">
-                  <input type="email" id="form5Example2" class="form-control" />
-                  <label class="form-label" for="form5Example2">Email address</label>
+                  <input type="email" id="form5Example2" class="form-control" placeholder="example123@gmail.com"/>
                 </div>
               </div>
-              <!--Grid column-->
+              <!--/Grid column-->
 
               <!--Grid column-->
               <div class="col-auto">
+                
                 <!-- Submit button -->
                 <button type="submit" class="btn btn-outline-light mb-4">
                   Subscribe
                 </button>
               </div>
-              <!--Grid column-->
+              <!--/Grid column-->
+
             </div>
-            <!--Grid row-->
+            <!--/Grid row-->
+
           </form>
         </section>
-        <!-- Section: Form -->
-
-        <!-- Section: Text -->
-        <section class="mb-4">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
-            repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
-            eum harum corrupti dicta, aliquam sequi voluptate quas.
-          </p>
-        </section>
-        <!-- Section: Text -->
+        <!--/Section: Form-->
 
         <!-- Section: Links -->
         <section class="">
+
           <!--Grid row-->
           <div class="row">
+
             <!--Grid column-->
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <div class="col-lg-3 col-md-3 mb-4 mb-md-0">
               <h5 class="text-uppercase">Links</h5>
 
               <ul class="list-unstyled mb-0">
@@ -124,10 +123,10 @@
                 </li>
               </ul>
             </div>
-            <!--Grid column-->
+            <!--/Grid column-->
 
             <!--Grid column-->
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <div class="col-lg-3 col-md-3 mb-4 mb-md-0">
               <h5 class="text-uppercase">Links</h5>
 
               <ul class="list-unstyled mb-0">
@@ -145,10 +144,10 @@
                 </li>
               </ul>
             </div>
-            <!--Grid column-->
+            <!--/Grid column-->
 
             <!--Grid column-->
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <div class="col-lg-3 col-md-3 mb-4 mb-md-0">
               <h5 class="text-uppercase">Links</h5>
 
               <ul class="list-unstyled mb-0">
@@ -166,10 +165,10 @@
                 </li>
               </ul>
             </div>
-            <!--Grid column-->
+            <!--/Grid column-->
 
             <!--Grid column-->
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <div class="col-lg-3 col-md-3 mb-4 mb-md-0">
               <h5 class="text-uppercase">Links</h5>
 
               <ul class="list-unstyled mb-0">
@@ -187,20 +186,24 @@
                 </li>
               </ul>
             </div>
-            <!--Grid column-->
+            <!--/Grid column-->
+
           </div>
-          <!--Grid row-->
-        </section>
-        <!-- Section: Links -->
-      </div>
-      <!-- Grid container -->
+          <!--/Grid row-->
 
-      <!-- Copyright -->
+        </section>
+        <!--/Section: Links-->
+
+      </div>
+      <!--/Grid container-->
+
+      <!--Copyright-->
       <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
         © 2020 Copyright:
         <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
       </div>
-      <!-- Copyright -->
+      <!--/Copyright-->
+
     </footer>
 <!--/Footer-->
 
