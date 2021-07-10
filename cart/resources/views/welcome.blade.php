@@ -5,13 +5,16 @@
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="https://wowslider.com/sliders/demo-77/data1/images/field175959_1920.jpg" class="d-block w-100" alt="first image">
+            <img src="https://wowslider.com/sliders/demo-77/data1/images/field175959_1920.jpg" class="d-block w-100"
+                alt="first image">
         </div>
         <div class="carousel-item">
-            <img src="https://wowslider.com/sliders/demo-77/data1/images/idaho239691_1920.jpg" class="d-block w-100" alt="second image">
+            <img src="https://wowslider.com/sliders/demo-77/data1/images/idaho239691_1920.jpg" class="d-block w-100"
+                alt="second image">
         </div>
         <div class="carousel-item">
-            <img src="https://wowslider.com/sliders/demo-77/data1/images/road220058.jpg" class="d-block w-100" alt="third image">
+            <img src="https://wowslider.com/sliders/demo-77/data1/images/road220058.jpg" class="d-block w-100"
+                alt="third image">
         </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
