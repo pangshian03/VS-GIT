@@ -16,6 +16,7 @@
 <body>
     <!--Navigation bar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <img src="{{asset('images/logo.png')}}" class="rounded-circle" alt="southern online" width="30">&nbsp;
         <a class="navbar-brand" href="#">Southern</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
