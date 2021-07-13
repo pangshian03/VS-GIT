@@ -15,7 +15,7 @@
 
 <body>
     <!--Navigation bar-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <img src="{{asset('images/logo.png')}}" class="rounded-circle" alt="southern online" width="30">&nbsp;
         <a class="navbar-brand" href="#">Southern</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
