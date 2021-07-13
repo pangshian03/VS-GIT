@@ -12,12 +12,12 @@
                 <!--same category name and id only save one time-->
                 <div class="form-group">
                     <label for="Category ID">Category ID</label>
-                    <input type="text" class="form-control" id="categoryID">
+                    <input type="text" class="form-control" id="categoryID" name="categoryID">
                 </div>
 
                 <div class="form-group">
                     <label for="Category name">Name</label>
-                    <input type="text" class="form-control" id="categoryName">
+                    <input type="text" class="form-control" id="categoryName" name="categoryName">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Submit</button>
