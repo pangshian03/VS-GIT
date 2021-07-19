@@ -15,6 +15,11 @@ class CategoryController extends Controller {
             'id'=>$r->categoryID,   //'id' is database field name, categoryID is HTML inout name
             'name'=>$r->categoryName
         ]);
-        Return view('insertCategory');
+        Return redirect()->route('viewCategory'); //after insert redirect to view category
+    }
+
+    public function view() {
+        $category=Category::all(); // apply SQL select * from categories
+        Return view('showCategory')->with('categories', $category); //filename
     }
 }

@@ -18,15 +18,23 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/products/', function () {
+Route::get('/products', function () {
     return view('products');
 });
 
-Route::get('/insertCategory/', function () {
+Route::get('/insertCategory', function () {
     return view('insertCategory');
 });
 
 Route::post('/insertCategory/store', [App\Http\Controllers\CategoryController::class, 'store'])->name('addCategory');
+
+Route::get('/viewCategory', [App\Http\Controllers\CategoryController::class, 'view'])->name('viewCategory');
+
+Route::get('/insertProduct', function () {
+    return view('insertProduct');
+});
+
+Route::post('/insertProduct/store', [App\Http\Controllers\ProductController::class, 'store'])->name('addProduct');
 
 Auth::routes();
 
