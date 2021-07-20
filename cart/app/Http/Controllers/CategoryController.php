@@ -13,7 +13,7 @@ class CategoryController extends Controller {
         $r=request(); //request means received the form data by method get or post
         $addCategory=Category::create([
             'id'=>$r->categoryID,   //'id' is database field name, categoryID is HTML inout name
-            'name'=>$r->categoryName
+            'name'=>$r->categoryName,
         ]);
         Return redirect()->route('viewCategory'); //after insert redirect to view category
     }

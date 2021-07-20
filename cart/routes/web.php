@@ -18,9 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/products', function () {
-    return view('products');
-});
+Route::get('/products', [App\Http\Controllers\ProductController::class, 'viewAll'])->name('Product');
 
 Route::get('/insertCategory', function () {
     return view('insertCategory');
@@ -35,6 +33,10 @@ Route::get('/insertProduct', function () {
 });
 
 Route::post('/insertProduct/store', [App\Http\Controllers\ProductController::class, 'store'])->name('addProduct');
+
+Route::get('/viewProduct', [App\Http\Controllers\ProductController::class, 'view'])->name('viewProduct');
+
+Route::post('/products', [App\Http\Controllers\ProductController::class, 'searchProduct'])->name('search.product');
 
 Auth::routes();
 

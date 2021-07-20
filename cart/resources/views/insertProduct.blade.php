@@ -7,7 +7,7 @@
         <div class="col-sm-6">
             </br></br></br>
             <h3>Create New Product</h3>
-            <form method="POST" , action="{{route('addProduct')}}">
+            <form method="POST" , action="{{route('addProduct')}}" enctype="multipart/form-data">
                 @CSRF 
                 <!--same category name and id only save one time-->
                 <div class="form-group">
@@ -24,7 +24,7 @@
                 </div>
                 <div class="form-group">
                     <label for="Category image">Image</label>
-                    <input type="text" class="form-control" id="image" name="image">
+                    <input type="file" class="form-control" id="product-image" name="product-image">
                 </div>
                 <div class="form-group">
                     <label for="Category quantity">Quantity</label>
