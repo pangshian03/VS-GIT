@@ -25,18 +25,19 @@ Route::get('/insertCategory', function () {
 });
 
 Route::post('/insertCategory/store', [App\Http\Controllers\CategoryController::class, 'store'])->name('addCategory');
-
 Route::get('/viewCategory', [App\Http\Controllers\CategoryController::class, 'view'])->name('viewCategory');
 
 Route::get('/insertProduct', function () {
-    return view('insertProduct');
+    return view('insertProduct', ['categoryID' => App\Models\Category::all()]);
 });
 
 Route::post('/insertProduct/store', [App\Http\Controllers\ProductController::class, 'store'])->name('addProduct');
-
 Route::get('/viewProduct', [App\Http\Controllers\ProductController::class, 'view'])->name('viewProduct');
 
 Route::post('/products', [App\Http\Controllers\ProductController::class, 'searchProduct'])->name('search.product');
+
+Route::get('/editProduct/{id}', [App\Http\Controllers\ProductController::class, 'edit'])->name('editProduct');
+Route::post('/updateProduct', [App\Http\Controllers\ProductController::class, 'update'])->name('updateProduct');
 
 Auth::routes();
 

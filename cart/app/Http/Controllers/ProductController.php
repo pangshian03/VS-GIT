@@ -8,6 +8,8 @@ use DB; //import
 
 use App\Models\Product; //import
 
+use Session;
+
 class ProductController extends Controller
 {
     public function store() {
@@ -24,7 +26,8 @@ class ProductController extends Controller
             'quantity'=>$r->quantity,
             'categoryID'=>$r->categoryID,
         ]);
-        Return redirect()->route('viewProduct'); //after insert redirect to view category
+        Session::flash('success', "Product added!");
+        Return redirect()->route('viewProduct'); //after inserting redirect to view product
     }
 
     public function view() {
@@ -46,5 +49,32 @@ class ProductController extends Controller
         ->get();
 
         Return view('products')->with('products', $result);
+    }
+
+    public function edit($id) {
+        $product=Product::all()->where('id', $id); //select * from products where id='$id'
+        Return view('editProduct')->with('products', $product);
+    }
+
+    public function update() {
+        $r=request();
+        $product=Product::find($r->id); //retrive the record based on id
+        
+        if ($r->file('product-image')!='') {
+            $image=$r->file('product-image');
+            $image->move('images', $image->getClientOriginalName());
+            $imageName=$image->getClientOriginalName();
+            $product->image=$imageName; //update product table record
+        }
+
+        $product->name=$r->productName;
+        $product->description=$r->description;
+        $product->price=$r->price;
+        $product->quantity=$r->quantity;
+        $product->categoryID=$r->categoryID;
+        $product->save();
+        Session::flash('success', "Product updated successful!");
+
+        Return redirect()->route('viewProduct'); //after updating redirect to view product
     }
 }
