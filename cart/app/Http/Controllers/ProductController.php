@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use DB; //import
 
 use App\Models\Product; //import
+use App\Models\Category; //import
 
 use Session;
 
@@ -30,9 +31,12 @@ class ProductController extends Controller
         Return redirect()->route('viewProduct'); //after inserting redirect to view product
     }
 
-    public function view() {
-        $product=Product::all(); // apply SQL select * from categories
-        Return view('showProduct')->with('products', $product); //filename
+    public function view(){
+        $product=DB::table('products') 
+        ->leftjoin('categories','categories.id','=','products.categoryID')
+        ->select('products.*','categories.id as catid','categories.name as catname')
+        ->get();
+        Return view('showProduct')->with('products',$product);
     }
 
     public function viewAll() {
@@ -53,7 +57,9 @@ class ProductController extends Controller
 
     public function edit($id) {
         $product=Product::all()->where('id', $id); //select * from products where id='$id'
-        Return view('editProduct')->with('products', $product);
+        Return view('editProduct')
+        ->with('products', $product)
+        ->with('categoryID', Category::all());
     }
 
     public function update() {
@@ -76,5 +82,11 @@ class ProductController extends Controller
         Session::flash('success', "Product updated successful!");
 
         Return redirect()->route('viewProduct'); //after updating redirect to view product
+    }
+
+    public function productDetail($id){
+        $product=Product::all()->where('id',$id); //apply SQL select * from products
+        Return view('productDetail')->with('products',$product);
+
     }
 }

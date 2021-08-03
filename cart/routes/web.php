@@ -20,9 +20,7 @@ Route::get('/', function () {
 
 Route::get('/products', [App\Http\Controllers\ProductController::class, 'viewAll'])->name('Product');
 
-Route::get('/insertCategory', function () {
-    return view('insertCategory');
-});
+Route::get('/insertCategory', [App\Http\Controllers\CategoryController::class, 'index'])->name('insertCategory');
 
 Route::post('/insertCategory/store', [App\Http\Controllers\CategoryController::class, 'store'])->name('addCategory');
 Route::get('/viewCategory', [App\Http\Controllers\CategoryController::class, 'view'])->name('viewCategory');
@@ -38,6 +36,8 @@ Route::post('/products', [App\Http\Controllers\ProductController::class, 'search
 
 Route::get('/editProduct/{id}', [App\Http\Controllers\ProductController::class, 'edit'])->name('editProduct');
 Route::post('/updateProduct', [App\Http\Controllers\ProductController::class, 'update'])->name('updateProduct');
+
+Route::get('/viewDetail/{id}', [App\Http\Controllers\ProductController::class, 'productDetail'])->name('viewDetail');
 
 Auth::routes();
 

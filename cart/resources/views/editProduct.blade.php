@@ -40,8 +40,16 @@
                 </div>
                 <div class="form-group">
                     <label for="Category ID">Category ID</label>
-                    <input type="text" class="form-control" id="categoryID" name="categoryID" min="0"
-                        value="{{$product->categoryID}}">
+                    <select name="categoryID" id="categoryID" class="form-control">
+                        @foreach($categoryID as $category)
+                            <option value="{{$category->id}}" 
+                                @if($product->categoryID==$category->id)
+                                    selected
+                                @endif
+                            >{{$category->name}}</option>
+                        @endforeach
+                        <!-- <option value="" selected >Name</option> -->
+                    </select>
                 </div>
                 @endforeach
                 <button type="submit" class="btn btn-primary">Update</button>

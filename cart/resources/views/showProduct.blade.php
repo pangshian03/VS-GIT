@@ -50,7 +50,7 @@
                             <td>{{$product->description}}</td>
                             <td>{{$product->price}}</td>
                             <td>{{$product->quantity}}</td>
-                            <td>{{$product->categoryID}}</td>
+                            <td>{{$product->catname}}</td>
                             <td>        <!--editProduct.php?id$product->id-->
                                 <a href="{{route('editProduct',['id'=>$product->id])}}" class="edit" title="Edit" data-toggle="tooltip">
                                     <i class="material-icons">Edit</i>

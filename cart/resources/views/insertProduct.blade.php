@@ -31,8 +31,12 @@
                     <input type="number" class="form-control" id="quantity" name="quantity" min="0">
                 </div>
                 <div class="form-group">
-                    <label for="Category ID">Category ID</label>
-                    <input type="text" class="form-control" id="categoryID" name="categoryID" min="0">
+                    <label for="Category ID">Category</label>
+                    <select name="categoryID" id="categoryID" class="form-control">
+                        @foreach($categoryID as $category)
+                            <option value="{{$category->id}}">{{$category->name}}</option>
+                        @endforeach
+                    </select>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Submit</button>
