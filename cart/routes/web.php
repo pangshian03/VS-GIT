@@ -39,6 +39,10 @@ Route::post('/updateProduct', [App\Http\Controllers\ProductController::class, 'u
 
 Route::get('/viewDetail/{id}', [App\Http\Controllers\ProductController::class, 'productDetail'])->name('viewDetail');
 
+Route::post('/addCart', [App\Http\Controllers\CartController::class, 'add'])->name('add.to.cart');
+
+Route::get('/myCart', [App\Http\Controllers\CartController::class, 'showMyCart'])->name('myCart');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
