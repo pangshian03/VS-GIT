@@ -25,7 +25,7 @@ class CartController extends Controller
         $addItem=myCart::create([
             'quantity'=>$r->quantity,
             'orderID'=>'',
-            'product'=>$r->id,
+            'productID'=>$r->id,
             'userID'=>Auth::id(),
         ]);
         Return redirect()->route('Product');
@@ -35,7 +35,7 @@ class CartController extends Controller
         $carts=DB::table('my_carts')
         ->leftjoin('products', 'products.id', '=', 'my_carts.productID')
         ->select('my_carts.quantity as cartQty', 'my_carts.id as cid', 'products.*')
-        ->where('my_cart.orderID', '=', '') //the item haven't make payment
+        ->where('my_carts.orderID', '=', '') //the item haven't make payment
         ->where('my_carts.userID', '=', Auth::id())
         ->get();
 
@@ -43,5 +43,11 @@ class CartController extends Controller
         //left join products on products.id=my_carts.productID where my_cart.orderID='' and
         //my_carts.userID='Auth::id()'
         Return view('myCart')->with('carts', $carts);
+    }
+
+    public function delete($id){
+        $delete=myCart::find($id);
+        $delete->delete();  //run SQL delete from my_Cart where id=$id
+        Return redirect()->route('myCart');
     }
 }
