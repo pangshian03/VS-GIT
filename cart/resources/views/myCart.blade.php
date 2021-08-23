@@ -77,9 +77,7 @@ function cal() {
                             </tr>
                             @endforeach
                             <tr align="right">
-                                <td colspan="5">
-                                    <button class="btn btn-md btn-primary" type="submit">Pay Now</button>
-                                </td>
+                                <td colspan="5"></td>
                                 <td>RM <input type="text" value="0" name="sub" id="sub" size="7" readonly></td>
                                 <td>&nbsp;</td>
                             </tr>
