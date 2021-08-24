@@ -10,6 +10,7 @@ use App\Models\myCart;
 use DB;
 use Auth;
 use Session;
+use Notification;
 
 class PaymentController extends Controller
 {
@@ -41,6 +42,9 @@ class PaymentController extends Controller
             $carts->orderID=$orderID->id;   //binding the orderID value with record
             $carts->save();
         }
+
+        $email='pangshian03@gmail.com';
+        Notification::route('mail', $email)->notify(new \App\Notifications\orderPaid($email));
 
         Session::flash('success','Order successfully!');
         
