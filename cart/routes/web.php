@@ -48,6 +48,10 @@ Route::post('\checkout', [App\Http\Controllers\PaymentController::class, 'paymen
 
 Route::get('/myOrder', [App\Http\Controllers\PaymentController::class, 'showOrder'])->name('myOrder');
 
+Route::get('/allOrder', [App\Http\Controllers\PaymentController::class, 'showAllOrder'])->name('allOrder');
+
+Route::get('/salesReport', [App\Http\Controllers\PaymentController::class, 'pdfReport'])->name('salesReport');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

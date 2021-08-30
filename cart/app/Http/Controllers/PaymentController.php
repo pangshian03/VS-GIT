@@ -11,6 +11,7 @@ use DB;
 use Auth;
 use Session;
 use Notification;
+use PDF;
 
 class PaymentController extends Controller
 {
@@ -55,11 +56,29 @@ class PaymentController extends Controller
         $orders=DB::table('my_orders')
         ->select('my_orders.id','my_orders.amount', 'my_orders.created_at')
         ->where('my_orders.userID', '=', Auth::id())
-        ->get();
-
+        //->get();
+        ->paginate(6);
         //select my_carts.quantity as cartQty, my_carts.id as cid, products.* from my_carts
         //left join products on products.id=my_carts.productID where my_cart.orderID='' and
         //my_carts.userID='Auth::id()'
         Return view('myOrder')->with('orders', $orders);
+    }
+
+    public function showAllOrder() {
+        $orders=DB::table('my_orders')
+        ->select('my_orders.id','my_orders.amount', 'my_orders.created_at')
+        ->paginate(6);  //show 6 items and the 7th item show next page
+
+        Return view('myOrder')->with('orders', $orders);
+    }
+
+    public function pdfReport() {
+        $orders=DB::table('my_orders')
+        ->select('my_orders.id','my_orders.amount', 'my_orders.created_at')
+        ->get();
+        
+        $pdf = PDF::loadView('salesReport', compact('orders'));
+    
+        return $pdf->download('report.pdf');
     }
 }

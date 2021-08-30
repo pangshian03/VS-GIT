@@ -5,7 +5,6 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-sm-1"></div>
         <div class="col-sm-12">
             </br></br></br>
             <div class="table-wrapper">
@@ -41,7 +40,12 @@
             </div>
             </br></br></br>
         </div>
-        <div class="col-sm-1"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            {{ $orders->links('pagination::bootstrap-4') }}
+        </div>
     </div>
 </div>
 
