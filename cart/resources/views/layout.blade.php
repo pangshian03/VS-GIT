@@ -11,6 +11,14 @@
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="app.css">
     <title>Southern Cart</title>
+    <?php
+        $count=DB::table('my_carts')
+        ->select('my_carts.userID')
+        ->where('my_carts.orderID', '=', '')
+        ->where('my_carts.userID', '=', Auth::id())
+        ->count();
+        Session::flash('success', $count);
+    ?>
 </head>
 
 <body>
@@ -26,10 +34,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Products</a>
+                    <a class="nav-link" href="/products">Products</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -48,13 +56,20 @@
 
             <form class="form-inline my-2 my-lg-0" action="{{route('search.product')}}" method="POST">
                 @CSRF
-                <input class="form-control mr-sm-2" name="keyword" type="search" placeholder="Search" aria-label="Search">
+                <input class="form-control mr-sm-2" name="keyword" type="search" placeholder="Search"
+                    aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
             &nbsp;
-            <button type="button" class="btn btn-success">
-                My Cart <span class="badge bg-danger">0</span>
-            </button>
+            <a href="myCart">
+                <button type="button" class="btn btn-success">
+                    My Cart <span class="badge bg-danger">
+                        @if(Session::has('success'))
+                        {{Session::get('success')}}
+                        @endif
+                    </span>
+                </button>
+            </a>
         </div>
     </nav>
     <!--/Navigation bar-->

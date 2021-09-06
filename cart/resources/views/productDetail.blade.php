@@ -11,6 +11,7 @@
                     @csrf
                     <div class="row">
                         <div class="col-md-3">
+                            </br></br>
                             <h5 class="card-title">{{$product->name}}</h5>
                             <input type="hidden" name="id" value="{{$product->id}}">
                             <img src="{{asset('images/')}}/{{$product->image}}" class="img-fluid" alt="" width="100%">
